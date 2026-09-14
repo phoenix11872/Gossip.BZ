@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+
 type Chunks struct {
 	DocumentUid string
 	Start       int
