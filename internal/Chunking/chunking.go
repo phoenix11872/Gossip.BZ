@@ -2,6 +2,7 @@ package chunking
 
 import (
 	"fmt"
+	docs "Gossipz.BZ/internal/Documents"
 )
 
 
@@ -110,13 +111,13 @@ func SplitIntoChunksByPolicy(content []rune, p ChunkingPolicies, bI int, CurrChu
 
 }
 
-func SubDivideIntoChunksByParagraphs(doc Document, p ChunkingPolicies) {
+func SubDivideIntoChunksByParagraphs(doc docs.Document, p ChunkingPolicies) {
 	_, _ = SubdivideIntoChunks(doc, p)
-
 }
 
-func SubdivideIntoChunks(doc Document, p ChunkingPolicies) ([]Chunks, error) {
+func SubdivideIntoChunks(doc docs.Document, p ChunkingPolicies) ([]Chunks, error) {
 	chunkslist := []Chunks{}
+	
 	if p.ChunkSize <= 0 {
 		return chunkslist, fmt.Errorf("chunk size must be greater than zero")
 	}

@@ -1,4 +1,4 @@
-package chunking
+package docs
 
 import (
 	"fmt"
