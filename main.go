@@ -1,6 +1,11 @@
-	package main
+package main
 
 import (
+	"log"
+	"net/http"
+	"os"
+
+	"Gossipz.BZ/router"
 )
 
 func main() {
@@ -10,5 +15,10 @@ func main() {
 	// 	fmt.Print(err)
 	// }
 	// fmt.Print(docs)
-	srv:= 1
+	srv:= router.ServerRoutes()
+	port:= os.Getenv("port");
+	err:= http.ListenAndServe(":"+port, srv)
+	if(err !=nil){
+		log.Fatal(err);
+	}
 }
