@@ -10,7 +10,7 @@ type Chunks struct {
 	DocumentUid string
 	Start       int
 	End         int
-	Embeddings  []float64
+	Embeddings  []float32
 }
 
 type ChunkingPolicies struct {
