@@ -1,12 +1,9 @@
 package handlers
 
 import (
-	"net/http"
-
 	"github.com/redis/go-redis/v9"
 	"google.golang.org/genai"
 )
-
 type AppHandler struct{
 	RDB *redis.Client
 	Gemini *genai.Client
